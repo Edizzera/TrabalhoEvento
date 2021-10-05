@@ -39,10 +39,10 @@ public class Local {
 
     @Override
     public String toString() {
-        return "Local{" +
-                "instituicao='" + instituicao + '\'' +
+        return
+                "\n" + "Instituicao ='" + instituicao + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", organizador='" + organizador + '\'' +
-                '}';
+                 '\'';
     }
 }

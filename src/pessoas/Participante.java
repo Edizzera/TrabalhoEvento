@@ -49,13 +49,12 @@ public class Participante extends Pessoa {
     }
 
     @Override
-    //Adicionar to string do Super também
     public String toString() {
-        return "Participante{" +
-                "endereco='" + endereco + '\'' +
-                ", telefone='" + telefone + '\'' +
+        return   "\n" + "Nome = " + getNome() + "\n"+
+                "Endereco = '" + endereco + '\'' +
+                ", Telefone ='" + telefone + '\'' +
                 ", cpf='" + cpf + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\''
+                ;
     }
 }
