@@ -40,9 +40,9 @@ public class Evento {
     @Override
     public String toString() {
         return "Evento{" +
-                "nome='" + nome + '\'' +
-                ", taxaInscricao=" + taxaInscricao +
-                ", data='" + data + '\'' +
+                "Nome= '" + nome + '\'' +
+                ", taxa de Inscricao= " + taxaInscricao +
+                ", Data='" + data + '\'' +
                 '}';
     }
 }
