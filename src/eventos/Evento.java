@@ -75,17 +75,6 @@ public class Evento implements Validador {
         this.data = data;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Evento{" +
-//                "nome='" + nome + '\'' +
-//                ", taxaInscricao=" + taxaInscricao +
-//                ", data='" + data + '\'' +
-//                ", participante=" + participante +
-//                '}' + '\'' +
-//                (local!= null ? local.toString():"Local Inválido");
-//    }
-
 
     @Override
     public boolean validaData(String date) throws ParseException {
