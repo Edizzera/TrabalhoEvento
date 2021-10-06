@@ -2,16 +2,20 @@ package eventos;
 
 import pessoas.Participante;
 import util.Situacao;
+import util.Validador;
 
+import java.text.ParseException;
 import java.util.List;
 
-public class Evento {
+public class Evento implements Validador {
     private String nome;
     private double taxaInscricao;
     private String data;
     private List<Participante> participante;
     private List<Local> local;
     private Situacao situacao;
+
+    //Construtor sem parametros
     public Evento() {}
 
     public Evento(String nome, double taxaInscricao, String data, List<Participante> participante, List<Local> local, Situacao situacao) {
@@ -82,6 +86,12 @@ public class Evento {
 //                (local!= null ? local.toString():"Local Inválido");
 //    }
 
+
+    @Override
+    public boolean validaData(String date) throws ParseException {
+        return Validador.super.validaData(date);
+    }
+
     @Override
     public String toString() {
         return
@@ -90,6 +100,6 @@ public class Evento {
                 ", Data do Evento ='" + data + '\'' + "\n" +
                 " Participante = " + participante + '\''+
                 (local!= null ? local.toString():"Local Inválido")  + '\'' +
-                ", "+ "\n" + "situacao=" + situacao ;
+                ", "+ "\n" + "situacao=" + situacao + "\n";
     }
 }

@@ -6,11 +6,12 @@ import pessoas.Participante;
 import util.Situacao;
 
 import javax.swing.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         List<Evento> eventos = new ArrayList();
         MenuItem enumMenu;
         do {
@@ -55,7 +56,7 @@ public class Menu {
                 """;
         return Integer.parseInt(JOptionPane.showInputDialog(status));
     }
-    public static void cadastra(List<Evento>eventos) {
+    public static void cadastra(List<Evento>eventos) throws ParseException {
         //Cria Evento
         String nomeEvento = JOptionPane.showInputDialog("Informe o Nome do Evento:");
         double taxaEvento = Double.parseDouble(JOptionPane.showInputDialog("Informe a taxa de Inscricao do Evento:"));
@@ -87,6 +88,7 @@ public class Menu {
             participantes.add(participante);
         }
         Evento evento = new Evento(nomeEvento,taxaEvento,dataEvento,participantes,locais,enumStatus);
+        evento.validaData(dataEvento);
         eventos.add(evento);
     }
 
