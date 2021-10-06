@@ -96,7 +96,7 @@ public class Menu {
         String pesquisaNome = JOptionPane.showInputDialog("Qual o Nome do Evento?");
         boolean flag = false;
         if(eventos.isEmpty())
-            JOptionPane.showMessageDialog(null,"Sem eventos cadastrados");
+            JOptionPane.showMessageDialog(null,"Sem Eventos Cadastrados");
         else{
             for(int i = 0; i < eventos.size(); i++) {
                 if(eventos.get(i).getNome().equals(pesquisaNome)) {
@@ -117,11 +117,12 @@ public class Menu {
         else{
             for(Evento statusPesq : eventos){
                 if(statusPesq.getSituacao().getNomeStatus().equals(pesquisaStatus)) {
-                    JOptionPane.showMessageDialog(null, "Evento(s) Encontrado(s) :" + eventos);
+                    JOptionPane.showMessageDialog(null, "Evento(s) Encontrado(s) :" + statusPesq);
                     flag = true;
                 }
             }
             if(flag == false){
+
                 JOptionPane.showMessageDialog(null, "Evento não encontrado!");
             }
         }
@@ -140,7 +141,7 @@ public class Menu {
                 else {
                     for(Local local : locais){
                         if(local.getInstituicao().equals(localPesq)){
-                            JOptionPane.showMessageDialog(null,"Instituição cadastrada!\n" + eventos);
+                            JOptionPane.showMessageDialog(null,"Instituição cadastrada!\n" + eventosPesq);
                             flag = true;
                         }
                     }
