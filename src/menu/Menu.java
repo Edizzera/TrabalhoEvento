@@ -38,13 +38,11 @@ public class Menu {
 
     }
     private static int montaMenu(){
-        String mnu = """
-                1- Cadastrar Evento
-                2- Pesquisar Evento Pelo Nome
-                3- Pesquisar Evento Pela Instituicao
-                4- Pesquisar Evento Pela Situacao
-                5- Sair \s
-                """;
+        String mnu = "";
+        mnu+=("Escolha Uma Opcao:\n");
+        for(MenuItem item : MenuItem.values()){
+            mnu += item.getNome() + "\n";
+        }
         return  Integer.parseInt(JOptionPane.showInputDialog(mnu));
     }
     private static  int setStatus(){
