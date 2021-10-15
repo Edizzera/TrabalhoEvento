@@ -50,7 +50,7 @@ public class Participante extends Pessoa {
 
     @Override
     public String toString() {
-        return   "\n" + "Nome = " + getNome() + "\n"+
+        return   "\n" + super.toString() + "\n"+
                 "Endereco = '" + endereco + '\'' +
                 ", Telefone ='" + telefone + '\'' +
                 ", cpf='" + cpf + '\'' +
