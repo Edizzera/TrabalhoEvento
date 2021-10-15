@@ -66,12 +66,12 @@ public class Menu {
 
 
         //cria Local
-        List<Local> locais = new ArrayList();
+//        Local locais = new Local();
         String inst = JOptionPane.showInputDialog("Informe a instituicao do evento:");
         String localTel = JOptionPane.showInputDialog("Informe Telefone da Instituicao:");
         String localOrg = JOptionPane.showInputDialog("Informe o Organizador do evento:");
         Local local = new Local(inst,localTel, localOrg);
-        locais.add(local);
+//        locais.add(local);
 
         //Cria Participante
         List<Participante>participantes = new ArrayList();
@@ -85,7 +85,7 @@ public class Menu {
             Participante participante = new Participante(nome,end,cpf,tel,mail);
             participantes.add(participante);
         }
-        Evento evento = new Evento(nomeEvento,taxaEvento,dataEvento,participantes,locais,enumStatus);
+        Evento evento = new Evento(nomeEvento,taxaEvento,dataEvento,participantes,local,enumStatus);
         evento.validaData(dataEvento);
         eventos.add(evento);
     }
@@ -133,16 +133,14 @@ public class Menu {
             JOptionPane.showMessageDialog(null,"Não há eventos cadastrados!");
         else {
             for(Evento eventosPesq : eventos){
-                List<Local>locais  = eventosPesq.getLocal();
+                Local locais  = eventosPesq.getLocal();
                 if(eventos.isEmpty())
                     JOptionPane.showMessageDialog(null,"Sem Local cadastrado");
                 else {
-                    for(Local local : locais){
-                        if(local.getInstituicao().equals(localPesq)){
+                        if(locais.getInstituicao().equals(localPesq)){
                             JOptionPane.showMessageDialog(null,"Instituição cadastrada!\n" + eventosPesq);
                             flag = true;
                         }
-                    }
                 }
             }
             if(flag == false) {

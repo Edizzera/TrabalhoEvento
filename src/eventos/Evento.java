@@ -12,13 +12,13 @@ public class Evento implements Validador {
     private double taxaInscricao;
     private String data;
     private List<Participante> participante;
-    private List<Local> local;
+    private Local local;
     private Situacao situacao;
 
     //Construtor sem parametros
     public Evento() {}
 
-    public Evento(String nome, double taxaInscricao, String data, List<Participante> participante, List<Local> local, Situacao situacao) {
+    public Evento(String nome, double taxaInscricao, String data, List<Participante> participante, Local local, Situacao situacao) {
         this.nome = nome;
         this.taxaInscricao = taxaInscricao;
         this.data = data;
@@ -35,11 +35,11 @@ public class Evento implements Validador {
         this.situacao = situacao;
     }
 
-    public List<Local> getLocal() {
+    public Local getLocal() {
         return local;
     }
 
-    public void setLocal(List<Local> local) {
+    public void setLocal(Local local) {
         this.local = local;
     }
 
