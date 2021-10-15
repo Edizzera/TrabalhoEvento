@@ -11,18 +11,18 @@ public class Evento implements Validador {
     private String nome;
     private double taxaInscricao;
     private String data;
-    private List<Participante> participante;
+    private List<Participante> participantes;
     private Local local;
     private Situacao situacao;
 
     //Construtor sem parametros
     public Evento() {}
 
-    public Evento(String nome, double taxaInscricao, String data, List<Participante> participante, Local local, Situacao situacao) {
+    public Evento(String nome, double taxaInscricao, String data, List<Participante> participantes, Local local, Situacao situacao) {
         this.nome = nome;
         this.taxaInscricao = taxaInscricao;
         this.data = data;
-        this.participante = participante;
+        this.participantes = participantes;
         this.local = local;
         this.situacao = situacao;
     }
@@ -43,12 +43,12 @@ public class Evento implements Validador {
         this.local = local;
     }
 
-    public List<Participante> getParticipante() {
-        return participante;
+    public List<Participante> getParticipantes() {
+        return participantes;
     }
 
-    public void setParticipante(List<Participante> participante) {
-        this.participante = participante;
+    public void setParticipantes(List<Participante> participantes) {
+        this.participantes = participantes;
     }
 
     public String getNome() {
@@ -83,11 +83,18 @@ public class Evento implements Validador {
 
     @Override
     public String toString() {
+        String aux ="";
+        if(participantes != null) {
+            for(Participante participante : participantes) {
+                if(participante != null)
+                    aux += participante +"\n";
+            }
+        }
         return
                 "Nome do Evento = '" + nome + '\'' +
                 ", Taxa de Inscricao =  R$ " + taxaInscricao +
                 ", Data do Evento ='" + data + '\'' + "\n" +
-                " Participante = " + participante + '\''+
+                " Participantes = " + aux + '\''+
                 (local!= null ? local.toString():"Local Inválido")  + '\'' +
                 ", "+ "\n" + "situacao=" + situacao + "\n";
     }
