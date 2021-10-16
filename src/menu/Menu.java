@@ -66,12 +66,11 @@ public class Menu {
 
 
         //cria Local
-//        Local locais = new Local();
         String inst = JOptionPane.showInputDialog("Informe a instituicao do evento:");
         String localTel = JOptionPane.showInputDialog("Informe Telefone da Instituicao:");
         String localOrg = JOptionPane.showInputDialog("Informe o Organizador do evento:");
         Local local = new Local(inst,localTel, localOrg);
-//        locais.add(local);
+
 
         //Cria Participante
         List<Participante>participantes = new ArrayList();
@@ -86,8 +85,9 @@ public class Menu {
             participantes.add(participante);
         }
         Evento evento = new Evento(nomeEvento,taxaEvento,dataEvento,participantes,local,enumStatus);
-        evento.validaData(dataEvento);
-        eventos.add(evento);
+        if(evento.validaData(dataEvento)) {
+            eventos.add(evento);
+        }
     }
 
     public static void pesquisaEventoNome(List<Evento>eventos){

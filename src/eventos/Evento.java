@@ -77,7 +77,7 @@ public class Evento implements Validador {
 
 
     @Override
-    public boolean validaData(String date) throws ParseException {
+    public boolean validaData(String date) {
         return Validador.super.validaData(date);
     }
 
