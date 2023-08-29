@@ -16,7 +16,7 @@ public interface Validador {
                 Calendar c = Calendar.getInstance();
                 c.setTime(df.parse(date));
                 if (c.get(Calendar.YEAR) == 2021) {
-                    System.out.println("Validado");
+                    logger.log("Validado")
                     return true;
                 }
                 else{
