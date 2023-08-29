@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Menu {
     public static void main(String[] args) throws ParseException {
-        List<Evento> eventos = new ArrayList();
+        List<Evento> eventos = new ArrayList<>();
         MenuItem enumMenu;
         do {
             Integer resposta = montaMenu();
@@ -73,7 +73,7 @@ public class Menu {
 
 
         //Cria Participante
-        List<Participante>participantes = new ArrayList();
+        List<Participante>participantes = new ArrayList<>();
         int numeroParticipantes = Integer.parseInt(JOptionPane.showInputDialog("Qual o número de participantes?"));
         for(int cont = 0; cont < numeroParticipantes; cont++){
             String nome = JOptionPane.showInputDialog("Informe Nome do Participante:");
@@ -102,7 +102,7 @@ public class Menu {
                     flag = true;
                 }
             }
-            if(flag == false ) {
+            if(flag) {
                 JOptionPane.showMessageDialog(null, "Não encontrou o Evento");
             }
         }
@@ -119,7 +119,7 @@ public class Menu {
                     flag = true;
                 }
             }
-            if(flag == false){
+            if(flag){
 
                 JOptionPane.showMessageDialog(null, "Evento não encontrado!");
             }
@@ -143,7 +143,7 @@ public class Menu {
                         }
                 }
             }
-            if(flag == false) {
+            if(flag) {
                 JOptionPane.showMessageDialog(null,"Local Não existe");
             }
         }
